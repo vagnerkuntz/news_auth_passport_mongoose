@@ -15,7 +15,7 @@ app.use(express.static('public'))
 app.get('/', (req, res) => res.render('index'))
 
 mongoose
-  .connect(mongo, { useMongoClient: true })
+  .connect(mongo, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     app.listen(port, () => console.log('listening...'))
   })
